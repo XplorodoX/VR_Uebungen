@@ -16,6 +16,7 @@
 
 		<script>
 			$(document).ready(function () {
+				// kuemmert sich um das Losfahren u. die Animation
 				$('.autoBewegen').click(function () {
 					$('.auto')
 						.addClass('animate')
@@ -24,14 +25,19 @@
 						});
 				});
 
+				// kuemmert sich um die Texteingabe + Fehlerbehandlung + Seite aufloesen Klick
 				$('.seiteAufloesen').click(function () {
 					if (textInput.value < 1 || textInput.value > 5) {
 						alert('Bitte geben Sie eine Zahl zwischen 1 und 5 ein');
 						return;
 					}
-					$('body').hide(textInput.value * 1000);
+					setTimeout(function () {
+						$('body').empty();
+					}, textInput.value * 1000);
+					// $('body').hide(textInput.value * 1000);
 				});
 
+				// prevents form from submitting (when pressing enter)
 				$('#form').submit(function (evt) {
 					evt.preventDefault();
 				});
