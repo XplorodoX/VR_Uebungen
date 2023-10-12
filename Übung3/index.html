@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="styles.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function () {
+				$('.autoBewegen').click(function () {
+					$('.auto')
+						.addClass('animate')
+						.on('animationend', function () {
+							$('.auto').removeClass('animate');
+						});
+				});
+
+				$('.seiteAufloesen').click(function () {
+					if (textInput.value < 1 || textInput.value > 5) {
+						alert('Bitte geben Sie eine Zahl zwischen 1 und 5 ein');
+						return;
+					}
+					$('body').hide(textInput.value * 1000);
+				});
+
+				$('#form').submit(function (evt) {
+					evt.preventDefault();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="auto">
+			<div class="karrosserie">
+				<div class="fenster"></div>
+			</div>
+			<div class="motorhaube"></div>
+			<div class="">
+				<div class="reifen reifenLinks"></div>
+				<div class="reifen reifenRechts"></div>
+			</div>
+		</div>
+
+		<div class="strasse"></div>
+
+		<form
+			id="form"
+			style="margin-bottom: 10px"
+		>
+			<label for="textInput">Geben Sie eine Zahl zwischen 1 und 5 ein</label>
+			<input
+				id="textInput"
+				name="textInput"
+				type="text"
+				value="3"
+				pattern="[1-5]"
+			/>
+		</form>
+
+		<button class="seiteAufloesen">Seite aufloesen</button>
+		<br />
+		<br />
+		<button class="autoBewegen">Losfahren</button>
+	</body>
+</html>

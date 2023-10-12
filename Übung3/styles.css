@@ -1,0 +1,73 @@
+.auto {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.animate {
+    animation: fahren 3s ease-in-out;
+}
+
+@keyframes fahren {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(500px);    
+    }
+}  
+
+.karrosserie {
+    position: absolute;
+    top: 60px;
+    width: 150px;
+    height: 50px;
+    border: 3px solid black;
+}
+
+.fenster {
+    position: relative;
+    top: 5px;
+    left: 90px;
+    width: 20px;
+    height: 13px;
+    border: 2px solid black;
+}
+
+.motorhaube {
+    position: relative;
+    top: 60px;
+    left: 125px;
+    width: 25px;
+    height: 20px;
+    border: 3px solid black;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+}
+
+.reifen {
+    position: absolute;
+    top: 100px;
+    /* left: 25px; */
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 3px solid black;
+    background-color: black;
+
+    &.reifenLinks {
+        left: 10px;
+    }
+
+    &.reifenRechts {
+        left: 115px;
+    }
+}
+
+.strasse {
+    position: absolute;
+    top: 189px;
+    width: 700px;
+    height: 5px;
+    background-color: grey;
+}
