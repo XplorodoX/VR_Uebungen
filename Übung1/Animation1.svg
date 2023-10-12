@@ -1,0 +1,41 @@
+<svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Straße -->
+    <line x1="0" y1="100" x2="400" y2="100" stroke="grey" stroke-width="1"/>
+
+    <!-- Auto -->
+    <g id="autoGroup">
+        <!-- Auto-Körper -->
+        <rect id="auto" x="50" y="75" width="40" height="20" fill="green" stroke="red" stroke-width="1"/>
+        <!-- Dreieckspitze -->
+        <polygon points="90,75 100,85 90,95" fill="yellow" stroke="red" stroke-width="1"/>
+        <!-- Räder des Autos (durchsichtig und oberhalb der Linie) -->
+        <circle cx="60" cy="95" r="5" fill="transparent" stroke="black" stroke-width="1"/>
+        <circle cx="80" cy="95" r="5" fill="transparent" stroke="black" stroke-width="1"/>
+        
+        <animateTransform 
+            id="autoAnimation"
+            attributeName="transform" 
+            attributeType="XML" 
+            type="translate" 
+            from="0 0" 
+            to="290 0" 
+            begin="1s" 
+            dur="2s" 
+            fill="freeze"
+            keyTimes="0;1"
+            keySplines="0.42 0 0.58 1"
+            calcMode="spline"/>
+    </g>
+
+    <!-- Ampel -->
+    <circle id="ampel" cx="380" cy="15" r="10" fill="red" stroke="#000056" stroke-width="1">
+        <!-- Animation für Ampel -->
+        <animate 
+            attributeName="fill" 
+            values="red;green;green;red" 
+            keyTimes="0;0.01;0.99;1" 
+            dur="2s" 
+            begin="autoAnimation.begin" 
+            fill="freeze"/>
+    </circle>
+</svg>

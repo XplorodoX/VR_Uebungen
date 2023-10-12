@@ -7,7 +7,7 @@
         <!-- Auto-Körper -->
         <rect id="auto" x="50" y="75" width="40" height="20" fill="green" stroke="red" stroke-width="1"/>
         <!-- Dreieckspitze -->
-        <polygon points="90,75 110,85 90,95" fill="yellow" stroke="red" stroke-width="1"/>
+        <polygon points="90,75 100,85 90,95" fill="yellow" stroke="red" stroke-width="1"/>
         <!-- Räder des Autos (durchsichtig und oberhalb der Linie) -->
         <circle cx="60" cy="95" r="5" fill="transparent" stroke="black" stroke-width="1"/>
         <circle cx="80" cy="95" r="5" fill="transparent" stroke="black" stroke-width="1"/>
@@ -27,12 +27,12 @@
     </g>
 
     <!-- Ampel -->
-    <circle id="ampel" cx="380" cy="10" r="10" fill="red" stroke="#000056" stroke-width="1">
+    <circle id="ampel" cx="380" cy="15" r="10" fill="red" stroke="#000056" stroke-width="1">
         <!-- Animation für Ampel -->
         <animate 
             attributeName="fill" 
-            values="red;green;red" 
-            keyTimes="0;0.5;0.5" 
+            values="red;green;green;red" 
+            keyTimes="0;0.01;0.99;1" 
             dur="2s" 
             begin="ampel.click" 
             fill="freeze"/>
